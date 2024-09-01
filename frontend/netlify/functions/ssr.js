@@ -1,22 +1,18 @@
-const server = require('path-to-your-server-main-file'); // Adjust this path accordingly
+const { createServer } = require('http');
+const { createApp } = require('../../dist/frontend/server/main');
 
 exports.handler = async (event, context) => {
-  const response = await new Promise((resolve, reject) => {
-    const app = server.app(); // Assuming 'app' is the exported Angular server app
-    const res = {
-      statusCode: 200,
-      headers: {},
-      body: '',
-    };
-
-    app(event, res, (result) => {
+  const app = createApp();
+  const server = createServer(app);
+  
+  return new Promise((resolve, reject) => {
+    server.listen(0, () => {
       resolve({
-        statusCode: res.statusCode,
-        headers: res.headers,
-        body: res.body,
+        statusCode: 200,
+        body: JSON.stringify({
+          message: 'Server is up and running!'
+        })
       });
     });
   });
-
-  return response;
 };
