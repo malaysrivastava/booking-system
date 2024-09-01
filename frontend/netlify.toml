@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build:ssr"
+  publish = "dist/frontend/browser"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/ssr"
+  status = 200
