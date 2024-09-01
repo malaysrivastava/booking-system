@@ -1,0 +1,64 @@
+<div class="container">
+  <!-- Form column -->
+  <div class="left-column">
+    <h4 [ngStyle]="{'color': '#2FC8DC', 'font-size': '1.7em', 'text-align': 'center', 'margin-top': '20px'}">
+      {{ getGreeting() }}
+    </h4>
+    <form (submit)="onSubmit($event)">
+      <div class="dropdowns-container">
+        <!-- Train Dropdown -->
+        <div class="dropdown">
+          <label for="trainDropdown">Choose Train</label>
+          <select id="trainDropdown" (change)="onTrainChange($event)" required="true">
+            <option *ngFor="let option of trainOptions" [value]="option.id">
+              {{ option.name}} {{ option.trainNumber?option.trainNumber:''}}
+            </option>
+          </select>
+        </div>
+
+        <!-- Coach Dropdown -->
+        <div class="dropdown">
+          <label for="coachDropdown">Select Coach</label>
+          <select id="coachDropdown" (change)="onCoachChange($event)" required="true">
+            <option *ngFor="let option of coachOptionList" [value]="option.id">
+              Coach - {{ option.seq }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Take number of seats to be booked-->
+      <div class="input-container">
+        <input type="number" placeholder="Enter number of seats" 
+          min="1"
+          max="7"
+        (input)="onSeatsChange($event)" required="true" />
+        <button type="submit">Book</button>
+      </div>
+    </form>
+    <!-- To display booking details after submission-->
+    <div *ngIf="responseMessage" class="response-message" [innerHTML]="responseMessage"></div>
+
+  </div>
+
+  <!-- Seat Layout -->
+  <div class="right-column">
+    <div class="info">
+      <div class="number-box" [ngStyle]="{'background-color': '#22C55E'}">
+        Vacant
+      </div>
+      <div class="number-box" [ngStyle]="{'background-color': '#EF4444'}">
+        Booked
+      </div>
+    </div>
+    <div class="grid">
+      <div *ngFor="let seat of seats" class="number-box" [ngStyle]="{'background-color': getNumberColor(seat.booked)}">
+        {{ seat.seatNumber }}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer Section -->
+<footer class="footer">
+  Made with <span class="heart">&lt;3</span> by Malay
+</footer>

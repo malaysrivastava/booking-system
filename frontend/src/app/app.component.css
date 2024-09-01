@@ -1,0 +1,142 @@
+/* Container to hold both columns */
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Left column styles */
+.left-column {
+  flex: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: auto;
+}
+
+.dropdowns-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.dropdown {
+  flex: 1;
+}
+
+.dropdown label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.dropdown select {
+  width: auto;
+  min-width: 80%;
+  padding: 5px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Center items horizontally */
+  width: 100%; /* Make input container take full width */
+  max-width: 500px; /* Optional: adjust to fit your design */
+}
+
+.input-container input {
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.input-container button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.input-container button:hover {
+  background-color: #0056b3;
+}
+
+.right-column {
+  flex: 0 0 60%;          /* 70% width of the container */
+  padding: 20px;          /* Padding around the grid */
+  background-color: #2FC8DC; /* Light grey background for right column */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  border-radius: 10px;    /* Rounded corners for the column */
+  border: 1px solid #ddd; /* Light border around the column */
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columns per row */
+  gap: 7px;                             /* Space between items */
+  padding: 7px;                         /* Padding inside the grid container */
+  border-radius: 10px;                   /* Rounded corners for the grid */
+  background-color: #ffffff;             /* Grey background color for the grid */
+  border: 2px solid #ccc;                /* Border around the grid */
+}
+
+.info {
+  display: flex;
+  width: 30%;
+  justify-content: space-around; /* Distributes the space evenly */
+  align-items: center;
+  gap: 10px; /* Vertically centers the items */
+  margin: 10px;
+  margin-left: 0; /* Adds space above the container */
+  padding: 10px; /* Adds some internal spacing */
+  background-color: #f8f8f8; /* Light background color */
+  border-radius: 8px; /* Rounds the corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.number-box {
+  color: white; /* Text color */
+  font-weight: bolder; /* Makes the text bold */
+  text-align: center; /* Centers the text */
+  padding: 10px 20px; /* Adds padding around the text */
+  border-radius: 4px; /* Rounds the corners of the box */
+  min-width: 100px; /* Ensures a minimum width for consistency */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+  transition: transform 0.3s ease; /* Animation for hover effect */
+}
+
+.number-box:hover {
+  transform: scale(1.05); /* Slightly enlarges the box on hover */
+}
+.number-box:nth-child(odd) {
+  background-color: #e0e0e0; /* Light grey for odd items */
+}
+
+.number-box:nth-child(even) {
+  background-color: #f5f5f5; /* Slightly different grey for even items */
+}
+
+.footer {
+  text-align: center; /* Centers the text */
+  padding: 10px 0; /* Adds padding above and below */
+  background-color: #f1f1f1; /* Light gray background color */
+  color: #333; /* Dark text color */
+  font-size: 14rm; /* Font size */
+  font-weight: 900;
+  position: fixed; /* Fixes the footer at the bottom */
+  width: 100%; /* Full width */
+  bottom: 0; /* Aligns at the bottom */
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.heart {
+  color: red; /* Red color for the heart */
+  font-size: 16px; /* Slightly larger font size */
+}

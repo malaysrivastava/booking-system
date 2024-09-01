@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_DB: mydatabase        # Name of the default database
+      POSTGRES_USER: myuser          # Username for PostgreSQL
+      POSTGRES_PASSWORD: mypassword  # Password for the PostgreSQL user
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"                  # Expose port 5432 for PostgreSQL
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com   # Default email for pgAdmin login
+      PGADMIN_DEFAULT_PASSWORD: admin            # Default password for pgAdmin login
+    ports:
+      - "8080:80"                 # Expose port 80 for pgAdmin
+    depends_on:
+      - postgres                   # Wait for PostgreSQL to start before starting pgAdmin
+
+volumes:
+  postgres_data:
