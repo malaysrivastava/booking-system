@@ -1,17 +1,18 @@
 FROM node:18
 
-WORKDIR /app
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-# RUN npm cache clean --force
-COPY package*.json ./
-RUN npm install
-# RUN npm install --check-files
-# If you are building your code for production
-# RUN npm ci --only=production
+WORKDIR /app/backend
 
-# Bundle app source
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application files to the working directory
 COPY . .
-CMD [ "npm", "run", "start" ]
-EXPOSE 7001/tcp
+
+# Expose the port the app runs on
+EXPOSE 7001
+
+# Start the application
+CMD ["npm", "run", "start"]
