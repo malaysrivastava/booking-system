@@ -138,6 +138,35 @@
 }
 
 .heart {
-  color: red; /* Red color for the heart */
+  color: rgb(122, 92, 244); /* Red color for the heart */
   font-size: 16px; /* Slightly larger font size */
+}
+
+.github-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+.github-button a {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Optional: Add background color */
+  border-radius: 4px; /* Optional: Add some border radius */
+  padding: 2px; /* Adjust padding for better spacing */
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+  border: 2px black;
+  text-decoration: none; /* Remove underline from the link */
+  color: #000; /* Text color */
+}
+
+.github-button img {
+  margin-right: 8px; /* Space between image and text */
+}
+
+.github-text {
+  font-size: 14px; /* Adjust font size */
+  font-weight: bold; /* Make the text bold */
+  color: #445B64;
 }
