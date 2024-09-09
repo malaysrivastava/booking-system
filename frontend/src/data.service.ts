@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = 'http://35.86.246.16:7001/api'; // Base URL for proxy
+  private apiUrl = 'http://35.86.246.16/api/'; // Base URL for proxy
 
   constructor(private http: HttpClient) {}
 
