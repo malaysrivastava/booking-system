@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = 'https://backend-booking-system.onrender.com/api/'; // Base URL for proxy
+  private apiUrl = 'https://api.malaysrivast.click/api/'; // Base URL for proxy
 
   constructor(private http: HttpClient) {}
 
